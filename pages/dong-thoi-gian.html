@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta name="referrer" content="no-referrer"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dòng thời gian lịch sử Quảng Trị</title>
+<link href="../assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,container-queries"></script>
+<script src="../assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,400;0,18..144,700;1,18..144,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- tailwind theme moved to assets/js/theme.js -->
+<style>
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #8A2E20 10%, #8A2E20 90%, transparent);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 24px;
+                transform: none;
+            }
+        }
+        .timeline-node {
+            transition: all 0.3s ease;
+        }
+        .timeline-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.4);
+        }
+        .glass-card {
+            background: rgba(244, 239, 230, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 0, 0, 0.1);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden" data-page="timeline">
+<div id="site-header"></div>
+<!-- TopNavBar -->
+
+<!-- Floating Navigation -->
+<div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4 font-label-caps text-label-caps text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#year-1954">
+<span class="w-2 h-2 rounded-full bg-outline group-hover:bg-primary transition-colors"></span> 1954
+        </a>
+<a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#year-1972">
+<span class="w-2 h-2 rounded-full bg-outline group-hover:bg-primary transition-colors"></span> 1972
+        </a>
+<a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#year-1975">
+<span class="w-2 h-2 rounded-full bg-outline group-hover:bg-primary transition-colors"></span> 1975
+        </a>
+<a class="hover:text-primary transition-colors flex items-center gap-2 group" href="#year-now">
+<span class="w-2 h-2 rounded-full bg-outline group-hover:bg-primary transition-colors"></span> Hiện nay
+        </a>
+</div>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-24 px-margin-mobile md:px-margin-desktop text-center max-w-container-max mx-auto">
+<h1 class="font-display-heritage text-headline-lg-mobile md:text-display-heritage text-primary mb-6">Dòng thời gian Quảng Trị</h1>
+<p class="font-title-modern text-title-modern text-on-surface-variant max-w-2xl mx-auto">Hành trình qua ký ức và khát vọng</p>
+<div class="w-24 h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent mx-auto mt-12 opacity-50"></div>
+</header>
+<!-- Main Timeline Content -->
+<main class="relative pb-section-gap">
+<!-- Shader Background -->
+<!-- STITCH_SHADER_START:ANIMATION_10 class="absolute inset-0 w-full h-full -z-10 opacity-30" -->
+<div class="absolute inset-0 w-full h-full -z-10 opacity-30" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_10" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_10');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+
+// Simplex 2D noise
+vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+float snoise(vec2 v){
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+           -0.577350269189626, 0.024390243902439);
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod(i, 289.0);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+  + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+    dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 a0 = x - floor(x + 0.5);
+  vec3 g = a0.x  * vec3(x0.x,x12.xz) + h.x * vec3(x0.y,x12.yw);
+  vec3 l = a0.yz * vec3(x12.xz,x12.zw) + h.yz * vec3(x12.yw,x12.zw);
+  vec3 t = vec3( dot(g,x0), dot(l.xy,x12.xy), dot(l.zw,x12.zw) );
+  return 130.0 * dot(m, t);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = uv * 2.0 - 1.0;
+    p.x *= u_resolution.x / u_resolution.y;
+    
+    // Create a paper-like grain and subtle movement
+    float n = snoise(p * 3.0 + u_time * 0.05);
+    
+    // Background color: surface-dim from design system
+    vec3 paperColor = vec3(0.894, 0.847, 0.776); // #E4D8C6
+    vec3 inkColor = vec3(0.420, 0.133, 0.094); // #6B2218 (primary)
+    
+    float grain = snoise(p * 100.0) * 0.02;
+    vec3 color = paperColor + grain;
+    
+    // Subtle vertical flow for the timeline path
+    float path = smoothstep(0.1, 0.0, abs(p.x + n * 0.05));
+    color = mix(color, inkColor, path * 0.05);
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_10 -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
+<div class="timeline-line"></div>
+<!-- Milestone 1954 -->
+<section class="relative mb-32 md:mb-section-gap reveal-on-scroll" id="year-1954">
+<div class="flex flex-col md:flex-row items-center w-full">
+<div class="w-full md:w-1/2 md:pr-16 text-right md:text-right text-left order-2 md:order-1 mt-8 md:mt-0 relative z-10">
+<div class="glass-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-secondary-container bg-primary px-3 py-1 rounded-full mb-4 inline-block">1954</span>
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-4">Hiệp định Genève và Vĩ tuyến 17</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Cầu Hiền Lương và sông Bến Hải trở thành giới tuyến quân sự tạm thời, chia cắt đất nước ròng rã 21 năm. Nơi đây chứng kiến nỗi đau chia ly và khát vọng thống nhất mãnh liệt.</p>
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary-fixed-dim transition-colors inline-flex items-center gap-2" href="van-hoa.html">
+                                Tìm hiểu thêm <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-surface shadow-md timeline-node z-20 flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-16 order-1 md:order-2 relative z-10 pl-16 md:pl-0">
+<div class="relative rounded-xl overflow-hidden shadow-xl">
+<img referrerpolicy="no-referrer" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" data-alt="A historic sepia-toned photograph of Hien Luong Bridge over the Ben Hai river in Vietnam, showing its distinct structure dividing north and south, evoking a solemn, historical mood with soft natural lighting and a vintage aesthetic." src="../assets/images/img-b2c34ba252.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestone 1972 -->
+<section class="relative mb-32 md:mb-section-gap reveal-on-scroll" id="year-1972">
+<div class="flex flex-col md:flex-row items-center w-full">
+<div class="w-full md:w-1/2 md:pr-16 order-1 relative z-10 pl-16 md:pl-0 md:pr-16">
+<div class="relative rounded-xl overflow-hidden shadow-xl">
+<div class="bg-cover bg-center w-full h-[300px] md:h-[400px] hover:scale-105 transition-transform duration-700" data-alt="A stark, dramatic black and white photograph of the ancient citadel of Quang Tri in 1972, showing ruined brick walls amidst the fog of war, emphasizing a heavy, solemn historical atmosphere with high contrast lighting." style="background-image: url('../assets/images/img-7ece327d76.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-surface shadow-md timeline-node z-20 flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-16 text-left order-2 mt-8 md:mt-0 relative z-10 pl-16 md:pl-16">
+<div class="glass-card p-8 rounded-xl shadow-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-full h-1 bg-primary transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-secondary-container bg-primary px-3 py-1 rounded-full mb-4 inline-block">1972</span>
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-4">Mùa hè đỏ lửa và Chiến dịch Thành cổ</h2>
+<p class="font-body-md text-on-surface-variant mb-6">81 ngày đêm bảo vệ Thành cổ Quảng Trị là bản hùng ca bất tử về lòng yêu nước. Từng tấc đất nơi đây đều thấm đẫm máu xương của các anh hùng liệt sĩ.</p>
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary-fixed-dim transition-colors inline-flex items-center gap-2" href="van-hoa.html">
+                                Tìm hiểu thêm <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestone 1975 -->
+<section class="relative mb-32 md:mb-section-gap reveal-on-scroll" id="year-1975">
+<div class="flex flex-col md:flex-row items-center w-full">
+<div class="w-full md:w-1/2 md:pr-16 text-right md:text-right text-left order-2 md:order-1 mt-8 md:mt-0 relative z-10">
+<div class="glass-card p-8 rounded-xl shadow-lg relative overflow-hidden group bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-secondary-container bg-primary px-3 py-1 rounded-full mb-4 inline-block">1975</span>
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-4">Ngày Thống nhất non sông</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Chiến dịch Hồ Chí Minh lịch sử toàn thắng. Vĩ tuyến 17 bị xóa bỏ, Bắc Nam sum họp một nhà. Quảng Trị bước vào kỷ nguyên hòa bình, xây dựng lại từ đống tro tàn.</p>
+<a class="font-label-caps text-label-caps text-primary hover:text-secondary-fixed-dim transition-colors inline-flex items-center gap-2" href="van-hoa.html">
+                                Tìm hiểu thêm <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-surface shadow-md timeline-node z-20 flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed-dim rounded-full"></div>
+</div>
+<div class="w-full md:w-1/2 md:pl-16 order-1 md:order-2 relative z-10 pl-16 md:pl-0">
+<div class="relative rounded-xl overflow-hidden shadow-xl p-4 bg-surface-container-highest border border-outline-variant">
+<div class="bg-cover bg-center w-full h-[250px] rounded-lg" data-alt="A warm, hopeful historical photograph showing people celebrating the reunification of Vietnam in 1975, vibrant flags, smiling faces, bathed in golden hour sunlight, conveying relief and a peaceful, optimistic mood." style="background-image: url('../assets/images/img-7124593e20.jpg')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestone Now -->
+<section class="relative reveal-on-scroll" id="year-now">
+<div class="flex flex-col md:flex-row items-center w-full">
+<div class="w-full md:w-1/2 md:pr-16 order-1 relative z-10 pl-16 md:pl-0 md:pr-16">
+<div class="relative rounded-xl overflow-hidden shadow-xl border-b-4 border-secondary-container">
+<img referrerpolicy="no-referrer" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" data-alt="A bright, vibrant aerial drone photograph of modern Quang Tri province, showcasing modern infrastructure, lush green landscapes, and wind turbines under a clear blue sky, evoking a sense of future aspiration and development." src="../assets/images/img-4b8e266a0a.jpg"/>
+</div>
+</div>
+<div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-secondary-container border-4 border-surface shadow-lg timeline-node z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="w-full md:w-1/2 md:pl-16 text-left order-2 mt-8 md:mt-0 relative z-10 pl-16 md:pl-16">
+<div class="glass-card p-8 rounded-xl shadow-lg relative overflow-hidden group bg-gradient-to-br from-surface to-surface-container-low">
+<span class="font-label-caps text-label-caps text-on-primary bg-secondary px-3 py-1 rounded-full mb-4 inline-block">Hiện nay</span>
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-4">Khát vọng vươn lên</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Từ vùng đất 'túi bom', Quảng Trị đang vươn mình mạnh mẽ, trở thành điểm đến của hòa bình, hợp tác và phát triển năng lượng tái tạo, bảo tồn di sản văn hóa.</p>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors inline-flex items-center gap-2" href="kham-pha.html">
+                                Khám phá Quảng Trị hiện đại <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+
+<script>
+        // Simple scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+<div id="site-footer"></div>
+<script src="../assets/js/site-map.js"></script>
+<script src="../assets/js/layout.js"></script>
+</body></html>

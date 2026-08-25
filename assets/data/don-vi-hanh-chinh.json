@@ -1,0 +1,1248 @@
+{
+  "source": {
+    "title": "Nghị quyết số 1680/NQ-UBTVQH15",
+    "issuer": "Ủy ban Thường vụ Quốc hội",
+    "date": "2025-06-16",
+    "effective": "2025-07-01",
+    "parent": "Nghị quyết số 202/2025/QH15 ngày 12/6/2025 của Quốc hội",
+    "proposal": "Đề án số 365/ĐA-CP ngày 09/5/2025 của Chính phủ",
+    "urls": [
+      "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1680-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-tinh-quang-tri-nam-2025-119250616205443422.htm",
+      "https://xaydungchinhsach.chinhphu.vn/sap-xep-dvhc-danh-sach-78-xa-phuong-dac-khu-cua-tinh-quang-tri-119250623080429221.htm"
+    ]
+  },
+  "summary": {
+    "total": 78,
+    "xa": 69,
+    "phuong": 8,
+    "dacKhu": 1,
+    "formedAfter": 77,
+    "unchanged": 1,
+    "unchangedNote": "Xã Tân Thành (huyện Minh Hóa cũ) không thực hiện sắp xếp.",
+    "note": "Chưa công bố ranh giới số / centroid chính thức. Không vẽ polygon hay ghim 78 điểm. Điều 3 NQ 1680 giao Chính phủ xác định diện tích trước 30/9/2025."
+  },
+  "units": [
+    {
+      "id": "nam-gianh",
+      "n": 1,
+      "type": "xã",
+      "name": "Nam Gianh",
+      "fullName": "xã Nam Gianh",
+      "region": "bac",
+      "from": [
+        "Quảng Hòa",
+        "Quảng Lộc",
+        "Quảng Văn",
+        "Quảng Minh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "nam-ba-don",
+      "n": 2,
+      "type": "xã",
+      "name": "Nam Ba Đồn",
+      "fullName": "xã Nam Ba Đồn",
+      "region": "bac",
+      "from": [
+        "Quảng Tân",
+        "Quảng Trung",
+        "Quảng Tiên",
+        "Quảng Sơn",
+        "Quảng Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dan-hoa",
+      "n": 3,
+      "type": "xã",
+      "name": "Dân Hóa",
+      "fullName": "xã Dân Hóa",
+      "region": "bac",
+      "from": [
+        "Trọng Hóa",
+        "Dân Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "kim-dien",
+      "n": 4,
+      "type": "xã",
+      "name": "Kim Điền",
+      "fullName": "xã Kim Điền",
+      "region": "bac",
+      "from": [
+        "Hóa Sơn",
+        "Hóa Hợp"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "kim-phu",
+      "n": 5,
+      "type": "xã",
+      "name": "Kim Phú",
+      "fullName": "xã Kim Phú",
+      "region": "bac",
+      "from": [
+        "Thượng Hóa",
+        "Trung Hóa",
+        "Minh Hóa",
+        "Tân Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "minh-hoa",
+      "n": 6,
+      "type": "xã",
+      "name": "Minh Hóa",
+      "fullName": "xã Minh Hóa",
+      "region": "bac",
+      "from": [
+        "thị trấn Quy Đạt",
+        "Xuân Hóa",
+        "Yên Hóa",
+        "Hồng Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tuyen-lam",
+      "n": 7,
+      "type": "xã",
+      "name": "Tuyên Lâm",
+      "fullName": "xã Tuyên Lâm",
+      "region": "bac",
+      "from": [
+        "Lâm Hóa",
+        "Thanh Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tuyen-son",
+      "n": 8,
+      "type": "xã",
+      "name": "Tuyên Sơn",
+      "fullName": "xã Tuyên Sơn",
+      "region": "bac",
+      "from": [
+        "Thanh Thạch",
+        "Hương Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dong-le",
+      "n": 9,
+      "type": "xã",
+      "name": "Đồng Lê",
+      "fullName": "xã Đồng Lê",
+      "region": "bac",
+      "from": [
+        "thị trấn Đồng Lê",
+        "Kim Hóa",
+        "Lê Hóa",
+        "Thuận Hóa",
+        "Sơn Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tuyen-phu",
+      "n": 10,
+      "type": "xã",
+      "name": "Tuyên Phú",
+      "fullName": "xã Tuyên Phú",
+      "region": "bac",
+      "from": [
+        "Đồng Hóa",
+        "Thạch Hóa",
+        "Đức Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tuyen-binh",
+      "n": 11,
+      "type": "xã",
+      "name": "Tuyên Bình",
+      "fullName": "xã Tuyên Bình",
+      "region": "bac",
+      "from": [
+        "Phong Hóa",
+        "Ngư Hóa",
+        "Mai Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tuyen-hoa",
+      "n": 12,
+      "type": "xã",
+      "name": "Tuyên Hóa",
+      "fullName": "xã Tuyên Hóa",
+      "region": "bac",
+      "from": [
+        "Tiến Hóa",
+        "Châu Hóa",
+        "Cao Quảng",
+        "Văn Hóa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tan-gianh",
+      "n": 13,
+      "type": "xã",
+      "name": "Tân Gianh",
+      "fullName": "xã Tân Gianh",
+      "region": "bac",
+      "from": [
+        "Phù Cảnh",
+        "Liên Trường",
+        "Quảng Thanh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "trung-thuan",
+      "n": 14,
+      "type": "xã",
+      "name": "Trung Thuần",
+      "fullName": "xã Trung Thuần",
+      "region": "bac",
+      "from": [
+        "Quảng Lưu",
+        "Quảng Thạch",
+        "Quảng Tiến"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "quang-trach",
+      "n": 15,
+      "type": "xã",
+      "name": "Quảng Trạch",
+      "fullName": "xã Quảng Trạch",
+      "region": "bac",
+      "from": [
+        "Quảng Phương",
+        "Quảng Xuân",
+        "Quảng Hưng"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "hoa-trach",
+      "n": 16,
+      "type": "xã",
+      "name": "Hòa Trạch",
+      "fullName": "xã Hòa Trạch",
+      "region": "bac",
+      "from": [
+        "Quảng Châu",
+        "Quảng Tùng",
+        "Cảnh Dương"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "phu-trach",
+      "n": 17,
+      "type": "xã",
+      "name": "Phú Trạch",
+      "fullName": "xã Phú Trạch",
+      "region": "bac",
+      "from": [
+        "Quảng Đông",
+        "Quảng Phú",
+        "Quảng Kim",
+        "Quảng Hợp"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "thuong-trach",
+      "n": 18,
+      "type": "xã",
+      "name": "Thượng Trạch",
+      "fullName": "xã Thượng Trạch",
+      "region": "bac",
+      "from": [
+        "Tân Trạch",
+        "Thượng Trạch"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "phong-nha",
+      "n": 19,
+      "type": "xã",
+      "name": "Phong Nha",
+      "fullName": "xã Phong Nha",
+      "region": "bac",
+      "from": [
+        "thị trấn Phong Nha",
+        "Lâm Trạch",
+        "Xuân Trạch",
+        "Phúc Trạch"
+      ],
+      "places": [
+        "phong-nha"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "bac-trach",
+      "n": 20,
+      "type": "xã",
+      "name": "Bắc Trạch",
+      "fullName": "xã Bắc Trạch",
+      "region": "bac",
+      "from": [
+        "Thanh Trạch",
+        "Hạ Mỹ",
+        "Liên Trạch",
+        "Bắc Trạch"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dong-trach",
+      "n": 21,
+      "type": "xã",
+      "name": "Đông Trạch",
+      "fullName": "xã Đông Trạch",
+      "region": "bac",
+      "from": [
+        "Hải Phú (Bố Trạch)",
+        "Sơn Lộc",
+        "Đức Trạch",
+        "Đồng Trạch"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "hoan-lao",
+      "n": 22,
+      "type": "xã",
+      "name": "Hoàn Lão",
+      "fullName": "xã Hoàn Lão",
+      "region": "bac",
+      "from": [
+        "thị trấn Hoàn Lão",
+        "Trung Trạch",
+        "Đại Trạch",
+        "Tây Trạch",
+        "Hòa Trạch"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "bo-trach",
+      "n": 23,
+      "type": "xã",
+      "name": "Bố Trạch",
+      "fullName": "xã Bố Trạch",
+      "region": "bac",
+      "from": [
+        "Hưng Trạch",
+        "Cự Nẫm",
+        "Vạn Trạch",
+        "Phú Định"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "nam-trach",
+      "n": 24,
+      "type": "xã",
+      "name": "Nam Trạch",
+      "fullName": "xã Nam Trạch",
+      "region": "bac",
+      "from": [
+        "thị trấn Nông trường Việt Trung",
+        "Nhân Trạch",
+        "Lý Nam"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "quang-ninh",
+      "n": 25,
+      "type": "xã",
+      "name": "Quảng Ninh",
+      "fullName": "xã Quảng Ninh",
+      "region": "bac",
+      "from": [
+        "thị trấn Quán Hàu",
+        "Vĩnh Ninh",
+        "Võ Ninh",
+        "Hàm Ninh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ninh-chau",
+      "n": 26,
+      "type": "xã",
+      "name": "Ninh Châu",
+      "fullName": "xã Ninh Châu",
+      "region": "bac",
+      "from": [
+        "Tân Ninh",
+        "Gia Ninh",
+        "Duy Ninh",
+        "Hải Ninh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "truong-ninh",
+      "n": 27,
+      "type": "xã",
+      "name": "Trường Ninh",
+      "fullName": "xã Trường Ninh",
+      "region": "bac",
+      "from": [
+        "Vạn Ninh",
+        "An Ninh",
+        "Xuân Ninh",
+        "Hiền Ninh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "truong-son",
+      "n": 28,
+      "type": "xã",
+      "name": "Trường Sơn",
+      "fullName": "xã Trường Sơn",
+      "region": "bac",
+      "from": [
+        "Trường Xuân",
+        "Trường Sơn"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "le-thuy",
+      "n": 29,
+      "type": "xã",
+      "name": "Lệ Thủy",
+      "fullName": "xã Lệ Thủy",
+      "region": "bac",
+      "from": [
+        "thị trấn Kiến Giang",
+        "Liên Thủy",
+        "Xuân Thủy",
+        "An Thủy",
+        "Phong Thủy",
+        "Lộc Thủy"
+      ],
+      "places": [
+        "vo-nguyen-giap"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "cam-hong",
+      "n": 30,
+      "type": "xã",
+      "name": "Cam Hồng",
+      "fullName": "xã Cam Hồng",
+      "region": "bac",
+      "from": [
+        "Cam Thủy (Lệ Thủy)",
+        "Thanh Thủy",
+        "Hồng Thủy",
+        "Ngư Thủy Bắc"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "sen-ngu",
+      "n": 31,
+      "type": "xã",
+      "name": "Sen Ngư",
+      "fullName": "xã Sen Ngư",
+      "region": "bac",
+      "from": [
+        "Hưng Thủy",
+        "Sen Thủy",
+        "Ngư Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tan-my",
+      "n": 32,
+      "type": "xã",
+      "name": "Tân Mỹ",
+      "fullName": "xã Tân Mỹ",
+      "region": "bac",
+      "from": [
+        "Tân Thủy",
+        "Dương Thủy",
+        "Mỹ Thủy",
+        "Thái Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "truong-phu",
+      "n": 33,
+      "type": "xã",
+      "name": "Trường Phú",
+      "fullName": "xã Trường Phú",
+      "region": "bac",
+      "from": [
+        "Trường Thủy",
+        "Mai Thủy",
+        "Phú Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "le-ninh",
+      "n": 34,
+      "type": "xã",
+      "name": "Lệ Ninh",
+      "fullName": "xã Lệ Ninh",
+      "region": "bac",
+      "from": [
+        "thị trấn Nông trường Lệ Ninh",
+        "Sơn Thủy",
+        "Hoa Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "kim-ngan",
+      "n": 35,
+      "type": "xã",
+      "name": "Kim Ngân",
+      "fullName": "xã Kim Ngân",
+      "region": "bac",
+      "from": [
+        "Kim Thủy",
+        "Ngân Thủy",
+        "Lâm Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "vinh-linh",
+      "n": 36,
+      "type": "xã",
+      "name": "Vĩnh Linh",
+      "fullName": "xã Vĩnh Linh",
+      "region": "nam",
+      "from": [
+        "thị trấn Hồ Xá",
+        "Vĩnh Long",
+        "Vĩnh Chấp"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "cua-tung",
+      "n": 37,
+      "type": "xã",
+      "name": "Cửa Tùng",
+      "fullName": "xã Cửa Tùng",
+      "region": "nam",
+      "from": [
+        "thị trấn Cửa Tùng",
+        "Vĩnh Giang",
+        "Hiền Thành",
+        "Kim Thạch"
+      ],
+      "places": [
+        "cua-tung",
+        "hien-luong",
+        "vinh-moc"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "vinh-hoang",
+      "n": 38,
+      "type": "xã",
+      "name": "Vĩnh Hoàng",
+      "fullName": "xã Vĩnh Hoàng",
+      "region": "nam",
+      "from": [
+        "Vĩnh Thái",
+        "Trung Nam",
+        "Vĩnh Hòa",
+        "Vĩnh Tú"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "vinh-thuy",
+      "n": 39,
+      "type": "xã",
+      "name": "Vĩnh Thủy",
+      "fullName": "xã Vĩnh Thủy",
+      "region": "nam",
+      "from": [
+        "Vĩnh Lâm",
+        "Vĩnh Sơn",
+        "Vĩnh Thủy"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ben-quan",
+      "n": 40,
+      "type": "xã",
+      "name": "Bến Quan",
+      "fullName": "xã Bến Quan",
+      "region": "nam",
+      "from": [
+        "thị trấn Bến Quan",
+        "Vĩnh Ô",
+        "Vĩnh Hà",
+        "Vĩnh Khê"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "con-tien",
+      "n": 41,
+      "type": "xã",
+      "name": "Cồn Tiên",
+      "fullName": "xã Cồn Tiên",
+      "region": "nam",
+      "from": [
+        "Hải Thái",
+        "Linh Trường",
+        "Gio An",
+        "Gio Sơn"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "cua-viet",
+      "n": 42,
+      "type": "xã",
+      "name": "Cửa Việt",
+      "fullName": "xã Cửa Việt",
+      "region": "nam",
+      "from": [
+        "thị trấn Cửa Việt",
+        "Gio Mai",
+        "Gio Hải"
+      ],
+      "places": [
+        "cua-viet"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "gio-linh",
+      "n": 43,
+      "type": "xã",
+      "name": "Gio Linh",
+      "fullName": "xã Gio Linh",
+      "region": "nam",
+      "from": [
+        "thị trấn Gio Linh",
+        "Gio Quang",
+        "Gio Mỹ",
+        "Phong Bình"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ben-hai",
+      "n": 44,
+      "type": "xã",
+      "name": "Bến Hải",
+      "fullName": "xã Bến Hải",
+      "region": "nam",
+      "from": [
+        "Trung Hải",
+        "Trung Giang",
+        "Trung Sơn"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "cam-lo",
+      "n": 45,
+      "type": "xã",
+      "name": "Cam Lộ",
+      "fullName": "xã Cam Lộ",
+      "region": "nam",
+      "from": [
+        "thị trấn Cam Lộ",
+        "Cam Thành",
+        "Cam Chính",
+        "Cam Nghĩa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "hieu-giang",
+      "n": 46,
+      "type": "xã",
+      "name": "Hiếu Giang",
+      "fullName": "xã Hiếu Giang",
+      "region": "nam",
+      "from": [
+        "Cam Thủy (Cam Lộ)",
+        "Cam Hiếu",
+        "Cam Tuyền",
+        "Thanh An"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "la-lay",
+      "n": 47,
+      "type": "xã",
+      "name": "La Lay",
+      "fullName": "xã La Lay",
+      "region": "nam",
+      "from": [
+        "A Bung",
+        "A Ngo"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ta-rut",
+      "n": 48,
+      "type": "xã",
+      "name": "Tà Rụt",
+      "fullName": "xã Tà Rụt",
+      "region": "nam",
+      "from": [
+        "A Vao",
+        "Húc Nghì",
+        "Tà Rụt"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dakrong",
+      "n": 49,
+      "type": "xã",
+      "name": "Đakrông",
+      "fullName": "xã Đakrông",
+      "region": "nam",
+      "from": [
+        "Ba Nang",
+        "Tà Long",
+        "Đakrông"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ba-long",
+      "n": 50,
+      "type": "xã",
+      "name": "Ba Lòng",
+      "fullName": "xã Ba Lòng",
+      "region": "nam",
+      "from": [
+        "Triệu Nguyên",
+        "Ba Lòng"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "huong-hiep",
+      "n": 51,
+      "type": "xã",
+      "name": "Hướng Hiệp",
+      "fullName": "xã Hướng Hiệp",
+      "region": "nam",
+      "from": [
+        "thị trấn Krông Klang",
+        "Mò Ó",
+        "Hướng Hiệp"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "huong-lap",
+      "n": 52,
+      "type": "xã",
+      "name": "Hướng Lập",
+      "fullName": "xã Hướng Lập",
+      "region": "nam",
+      "from": [
+        "Hướng Việt",
+        "Hướng Lập"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "huong-phung",
+      "n": 53,
+      "type": "xã",
+      "name": "Hướng Phùng",
+      "fullName": "xã Hướng Phùng",
+      "region": "nam",
+      "from": [
+        "Hướng Sơn",
+        "Hướng Linh",
+        "Hướng Phùng"
+      ],
+      "places": [
+        "chenh-venh"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "khe-sanh",
+      "n": 54,
+      "type": "xã",
+      "name": "Khe Sanh",
+      "fullName": "xã Khe Sanh",
+      "region": "nam",
+      "from": [
+        "thị trấn Khe Sanh",
+        "Tân Hợp",
+        "Húc",
+        "Hướng Tân"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "tan-lap",
+      "n": 55,
+      "type": "xã",
+      "name": "Tân Lập",
+      "fullName": "xã Tân Lập",
+      "region": "nam",
+      "from": [
+        "Tân Liên",
+        "Hướng Lộc",
+        "Tân Lập"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "lao-bao",
+      "n": 56,
+      "type": "xã",
+      "name": "Lao Bảo",
+      "fullName": "xã Lao Bảo",
+      "region": "nam",
+      "from": [
+        "Tân Thành (Hướng Hóa)",
+        "Tân Long",
+        "thị trấn Lao Bảo"
+      ],
+      "places": [
+        "lao-bao"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "lia",
+      "n": 57,
+      "type": "xã",
+      "name": "Lìa",
+      "fullName": "xã Lìa",
+      "region": "nam",
+      "from": [
+        "Thanh",
+        "Thuận",
+        "Lìa"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "a-doi",
+      "n": 58,
+      "type": "xã",
+      "name": "A Dơi",
+      "fullName": "xã A Dơi",
+      "region": "nam",
+      "from": [
+        "Ba Tầng",
+        "Xy",
+        "A Dơi"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "trieu-phong",
+      "n": 59,
+      "type": "xã",
+      "name": "Triệu Phong",
+      "fullName": "xã Triệu Phong",
+      "region": "nam",
+      "from": [
+        "thị trấn Ái Tử",
+        "Triệu Thành",
+        "Triệu Thượng"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ai-tu",
+      "n": 60,
+      "type": "xã",
+      "name": "Ái Tử",
+      "fullName": "xã Ái Tử",
+      "region": "nam",
+      "from": [
+        "Triệu Ái",
+        "Triệu Giang",
+        "Triệu Long"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "trieu-binh",
+      "n": 61,
+      "type": "xã",
+      "name": "Triệu Bình",
+      "fullName": "xã Triệu Bình",
+      "region": "nam",
+      "from": [
+        "Triệu Độ",
+        "Triệu Thuận",
+        "Triệu Hòa",
+        "Triệu Đại"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "trieu-co",
+      "n": 62,
+      "type": "xã",
+      "name": "Triệu Cơ",
+      "fullName": "xã Triệu Cơ",
+      "region": "nam",
+      "from": [
+        "Triệu Trung",
+        "Triệu Tài",
+        "Triệu Cơ"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "nam-cua-viet",
+      "n": 63,
+      "type": "xã",
+      "name": "Nam Cửa Việt",
+      "fullName": "xã Nam Cửa Việt",
+      "region": "nam",
+      "from": [
+        "Triệu Trạch",
+        "Triệu Phước",
+        "Triệu Tân"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dien-sanh",
+      "n": 64,
+      "type": "xã",
+      "name": "Diên Sanh",
+      "fullName": "xã Diên Sanh",
+      "region": "nam",
+      "from": [
+        "thị trấn Diên Sanh",
+        "Hải Trường",
+        "Hải Định"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "my-thuy",
+      "n": 65,
+      "type": "xã",
+      "name": "Mỹ Thủy",
+      "fullName": "xã Mỹ Thủy",
+      "region": "nam",
+      "from": [
+        "Hải Dương",
+        "Hải An",
+        "Hải Khê"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "hai-lang",
+      "n": 66,
+      "type": "xã",
+      "name": "Hải Lăng",
+      "fullName": "xã Hải Lăng",
+      "region": "nam",
+      "from": [
+        "Hải Phú (Hải Lăng)",
+        "Hải Lâm",
+        "Hải Thượng"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "nam-hai-lang",
+      "n": 67,
+      "type": "xã",
+      "name": "Nam Hải Lăng",
+      "fullName": "xã Nam Hải Lăng",
+      "region": "nam",
+      "from": [
+        "Hải Sơn",
+        "Hải Phong",
+        "Hải Chánh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "vinh-dinh",
+      "n": 68,
+      "type": "xã",
+      "name": "Vĩnh Định",
+      "fullName": "xã Vĩnh Định",
+      "region": "nam",
+      "from": [
+        "Hải Quy",
+        "Hải Hưng",
+        "Hải Bình"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dong-hoi",
+      "n": 69,
+      "type": "phường",
+      "name": "Đồng Hới",
+      "fullName": "phường Đồng Hới",
+      "region": "bac",
+      "from": [
+        "Đức Ninh Đông",
+        "Đồng Hải",
+        "Đồng Phú",
+        "Phú Hải",
+        "Hải Thành",
+        "Nam Lý",
+        "Bảo Ninh",
+        "Đức Ninh"
+      ],
+      "places": [
+        "dong-hoi",
+        "nhat-le"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "dong-thuan",
+      "n": 70,
+      "type": "phường",
+      "name": "Đồng Thuận",
+      "fullName": "phường Đồng Thuận",
+      "region": "bac",
+      "from": [
+        "Bắc Lý",
+        "Lộc Ninh",
+        "Quang Phú"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dong-son",
+      "n": 71,
+      "type": "phường",
+      "name": "Đồng Sơn",
+      "fullName": "phường Đồng Sơn",
+      "region": "bac",
+      "from": [
+        "Bắc Nghĩa",
+        "Đồng Sơn",
+        "Nghĩa Ninh",
+        "Thuận Đức"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "ba-don",
+      "n": 72,
+      "type": "phường",
+      "name": "Ba Đồn",
+      "fullName": "phường Ba Đồn",
+      "region": "bac",
+      "from": [
+        "Quảng Phong",
+        "Quảng Long",
+        "Ba Đồn",
+        "Quảng Hải"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "bac-gianh",
+      "n": 73,
+      "type": "phường",
+      "name": "Bắc Gianh",
+      "fullName": "phường Bắc Gianh",
+      "region": "bac",
+      "from": [
+        "Quảng Phúc",
+        "Quảng Thọ",
+        "Quảng Thuận"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "dong-ha",
+      "n": 74,
+      "type": "phường",
+      "name": "Đông Hà",
+      "fullName": "phường Đông Hà",
+      "region": "nam",
+      "from": [
+        "Phường 1 (Đông Hà)",
+        "Phường 3 (Đông Hà)",
+        "Phường 4",
+        "Đông Giang",
+        "Đông Thanh"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "nam-dong-ha",
+      "n": 75,
+      "type": "phường",
+      "name": "Nam Đông Hà",
+      "fullName": "phường Nam Đông Hà",
+      "region": "nam",
+      "from": [
+        "Phường 2 (Đông Hà)",
+        "Phường 5",
+        "Đông Lễ",
+        "Đông Lương"
+      ],
+      "places": [],
+      "unchanged": false
+    },
+    {
+      "id": "quang-tri",
+      "n": 76,
+      "type": "phường",
+      "name": "Quảng Trị",
+      "fullName": "phường Quảng Trị",
+      "region": "nam",
+      "from": [
+        "Phường 1 (thị xã Quảng Trị)",
+        "Phường 2 (thị xã Quảng Trị)",
+        "Phường 3 (thị xã Quảng Trị)",
+        "An Đôn",
+        "Hải Lệ"
+      ],
+      "places": [
+        "thanh-co"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "con-co",
+      "n": 77,
+      "type": "đặc khu",
+      "name": "Cồn Cỏ",
+      "fullName": "đặc khu Cồn Cỏ",
+      "region": "nam",
+      "from": [
+        "huyện Cồn Cỏ"
+      ],
+      "places": [
+        "con-co"
+      ],
+      "unchanged": false
+    },
+    {
+      "id": "tan-thanh",
+      "n": 78,
+      "type": "xã",
+      "name": "Tân Thành",
+      "fullName": "xã Tân Thành",
+      "region": "bac",
+      "from": [
+        "xã Tân Thành (huyện Minh Hóa)"
+      ],
+      "places": [],
+      "unchanged": true
+    }
+  ]
+}

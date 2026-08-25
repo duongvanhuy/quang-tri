@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta name="referrer" content="no-referrer"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khám phá Quảng Trị</title>
+<link href="../assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,container-queries"></script>
+<script src="../assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,400;0,18..144,700;1,18..144,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col" data-page="travel">
+<div id="site-header"></div>
+
+<main class="flex-1">
+  <section class="relative w-full min-h-[52dvh] md:min-h-[58dvh] flex items-end overflow-hidden">
+    <img referrerpolicy="no-referrer" alt="Cầu Hiền Lương và sông Bến Hải lúc chiều" class="absolute inset-0 w-full h-full object-cover" src="../assets/images/img-8b56f172fd.jpg"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/55 to-black/20"></div>
+    <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-10 pt-28">
+      <p class="font-label-caps text-label-caps text-secondary-container mb-3">Điểm đến</p>
+      <h1 class="font-display-heritage text-display-heritage text-on-primary max-w-3xl">Khám phá Quảng Trị</h1>
+      <p class="font-body-lg text-on-primary/90 max-w-xl mt-4">Thành Cổ, Phong Nha, Nhật Lệ, Cửa Tùng, đèo Sa Mù — chọn một hướng. Tỉnh mới dài: đừng nhồi cả hai địa bàn cũ vào nửa ngày.</p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 mt-6 text-sm">
+        <a class="text-on-primary/90 underline-offset-4 hover:underline" href="#diem-den">Xem điểm</a>
+        <a class="text-on-primary/90 underline-offset-4 hover:underline" href="ban-do.html">Bản đồ</a>
+        <a class="text-on-primary/90 underline-offset-4 hover:underline" href="lich-trinh.html">Lịch trình</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-6 pb-12">
+    <nav id="bo-loc" class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-4 border-b border-outline-variant/40" aria-label="Lọc điểm đến">
+      <div class="flex flex-wrap gap-x-5 gap-y-2" id="filter-kinds">
+        <button type="button" data-filter="all" class="filter-link is-active font-label-caps text-label-caps text-primary border-b-2 border-secondary pb-0.5">Tất cả</button>
+        <button type="button" data-filter="bien" class="filter-link font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent pb-0.5 hover:text-primary">Biển đảo</button>
+        <button type="button" data-filter="di-tich" class="filter-link font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent pb-0.5 hover:text-primary">Di tích</button>
+        <button type="button" data-filter="nui" class="filter-link font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent pb-0.5 hover:text-primary">Núi rừng</button>
+        <button type="button" data-filter="hang" class="filter-link font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent pb-0.5 hover:text-primary">Hang động</button>
+        <button type="button" data-filter="lang" class="filter-link font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent pb-0.5 hover:text-primary">Bản làng</button>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <label class="sr-only" for="loc-huyen">Xã / phường sau 1/7/2025</label>
+        <select id="loc-huyen" class="bg-transparent border-0 border-b border-outline text-on-surface py-1 pr-6 text-sm focus:ring-0 focus:border-primary">
+          <option value="">Mọi địa bàn</option>
+          <option value="tx-qt">Phường Quảng Trị</option>
+          <option value="vinh-linh">Xã Cửa Tùng</option>
+          <option value="dong-hoi">Phường Đồng Hới</option>
+          <option value="bo-trach">Xã Phong Nha</option>
+          <option value="le-thuy">Xã Lệ Thủy</option>
+          <option value="huong-hoa">Xã Hướng Phùng</option>
+        </select>
+        <a class="text-sm font-medium text-primary hover:text-secondary inline-flex items-center gap-1" href="ban-do.html">Bản đồ <span class="material-symbols-outlined text-[18px]">map</span></a>
+        <a class="text-sm font-medium text-primary hover:text-secondary" href="hanh-chinh.html">78 xã phường</a>
+      </div>
+    </nav>
+
+    <section id="diem-den" class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-5 scroll-mt-24">
+      <a class="dest-card md:col-span-7 lg:col-span-8 relative min-h-[280px] md:min-h-[360px] overflow-hidden group" data-kind="di-tich" data-huyen="tx-qt" href="diem-den/thanh-co.html">
+        <img referrerpolicy="no-referrer" alt="Thành Cổ Quảng Trị" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-58598ff348.jpg"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+          <p class="font-label-caps text-label-caps text-secondary-container mb-2">Di tích</p>
+          <h2 class="font-display-heritage text-3xl md:text-4xl leading-tight">Thành Cổ Quảng Trị</h2>
+          <p class="text-sm text-on-primary/85 mt-2">Phường Quảng Trị · 81 ngày đêm 1972</p>
+        </div>
+      </a>
+      <div class="md:col-span-5 lg:col-span-4 flex flex-col gap-5">
+        <a class="dest-card relative min-h-[160px] md:flex-1 overflow-hidden group" data-kind="bien" data-huyen="vinh-linh" href="ban-do.html">
+          <img referrerpolicy="no-referrer" alt="Biển Cửa Tùng" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-97408f6108.jpg"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/45 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+            <p class="font-label-caps text-label-caps text-secondary-container mb-1">Biển đảo</p>
+            <h2 class="font-headline-lg text-xl">Biển Cửa Tùng</h2>
+            <p class="text-sm text-on-primary/80 mt-1">Xã Cửa Tùng</p>
+          </div>
+        </a>
+        <a class="dest-card relative min-h-[160px] md:flex-1 overflow-hidden group" data-kind="nui" data-huyen="huong-hoa" href="cong-dong.html">
+          <img referrerpolicy="no-referrer" alt="Đèo Sa Mù" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-84bdbfd779.jpg"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/45 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+            <p class="font-label-caps text-label-caps text-secondary-container mb-1">Núi rừng</p>
+            <h2 class="font-headline-lg text-xl">Đèo Sa Mù</h2>
+            <p class="text-sm text-on-primary/80 mt-1">Xã Hướng Phùng · gọi trước khi lên bản</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="mt-5 grid grid-cols-1 md:grid-cols-12 gap-5">
+      <a class="dest-card md:col-span-7 relative min-h-[220px] overflow-hidden group" data-kind="hang" data-huyen="bo-trach" href="diem-den/phong-nha.html">
+        <img referrerpolicy="no-referrer" alt="Núi rừng vùng Phong Nha – Kẻ Bàng" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-ccddc239e7.jpg"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/40 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+          <p class="font-label-caps text-label-caps text-secondary-container mb-1">Hang động · UNESCO</p>
+          <h2 class="font-headline-lg text-2xl md:text-3xl">Phong Nha – Kẻ Bàng</h2>
+          <p class="text-sm text-on-primary/80 mt-1">Xã Phong Nha · động Phong Nha, Thiên Đường. Đặt tour chính thức.</p>
+        </div>
+      </a>
+      <a class="dest-card md:col-span-5 relative min-h-[220px] overflow-hidden group" data-kind="bien" data-huyen="dong-hoi" href="diem-den/nhat-le.html">
+        <img referrerpolicy="no-referrer" alt="Bãi biển miền Trung" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-6fc5926016.jpg"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/45 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+          <p class="font-label-caps text-label-caps text-secondary-container mb-1">Biển đảo</p>
+          <h2 class="font-headline-lg text-2xl">Biển Nhật Lệ</h2>
+          <p class="text-sm text-on-primary/80 mt-1">Phường Đồng Hới · Bảo Ninh cũ. Hải sản, tắm biển.</p>
+        </div>
+      </a>
+    </section>
+    <section class="mt-5 grid grid-cols-1 md:grid-cols-12 gap-5">
+      <a class="dest-card md:col-span-5 relative min-h-[200px] overflow-hidden group" data-kind="di-tich" data-huyen="le-thuy" href="diem-den/vo-nguyen-giap.html">
+        <img referrerpolicy="no-referrer" alt="Không gian di tích vùng Lệ Thủy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/images/img-8b536adcb4.jpg"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/45 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 qt-card-caption text-on-primary">
+          <p class="font-label-caps text-label-caps text-secondary-container mb-1">Di tích · Lệ Thủy</p>
+          <h2 class="font-headline-lg text-xl md:text-2xl">Nhà Đại tướng Võ Nguyên Giáp</h2>
+          <p class="text-sm text-on-primary/80 mt-1">Xã Lệ Thủy (Lộc Thủy cũ). Đi chậm, trang phục lịch sự.</p>
+        </div>
+      </a>
+      <div class="md:col-span-7 bg-surface-container-low p-6 flex flex-col justify-center">
+        <p class="font-label-caps text-label-caps text-secondary mb-2">Cùng phía nam</p>
+        <h2 class="font-title-modern text-xl text-primary mb-3">Hiền Lương, Vịnh Mốc, Cửa Tùng</h2>
+        <p class="text-sm text-on-surface-variant mb-4 max-w-md">Ghép trong lịch vĩ tuyến 17 — không cùng ngày với Phong Nha. Bản Vân Kiều: gọi trước, trang cộng đồng.</p>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a class="text-primary font-medium hover:text-secondary" href="lich-trinh.html#nam">Lịch 2 ngày nam</a>
+          <a class="text-primary font-medium hover:text-secondary" href="ban-do.html">Bản đồ</a>
+          <a class="text-primary font-medium hover:text-secondary" href="cong-dong.html">Bản làng</a>
+        </div>
+      </div>
+    </section>
+    <p id="filter-empty" class="hidden text-on-surface-variant text-sm mt-6">Không có điểm nào khớp bộ lọc. Chọn “Tất cả” hoặc mở bản đồ.</p>
+
+    <section class="mt-10">
+      <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
+        <div>
+          <h2 class="font-headline-lg text-2xl md:text-3xl text-primary">Hai lịch 2 ngày</h2>
+          <p class="text-on-surface-variant text-sm mt-1 max-w-xl">Một cuối tuần chọn một địa bàn. Chi tiết từng ngày trên trang lịch trình.</p>
+        </div>
+        <a class="inline-flex items-center gap-1 text-primary font-medium hover:text-secondary" href="lich-trinh.html">Mở lịch trình <span class="material-symbols-outlined text-[18px]">east</span></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <article class="md:col-span-7 qt-card bg-surface-container-lowest border border-outline-variant/25 flex flex-col overflow-hidden">
+          <div class="qt-card-media overflow-hidden">
+            <img referrerpolicy="no-referrer" alt="Cầu Hiền Lương" class="w-full h-44 object-cover" src="../assets/images/img-2897a1c04d.jpg"/>
+          </div>
+          <div class="qt-card-body flex flex-col flex-1">
+            <p class="font-label-caps text-label-caps text-secondary mb-2">2 ngày · phía nam</p>
+            <h3 class="font-title-modern text-primary text-xl mb-3">Vĩ tuyến 17</h3>
+            <ul class="text-sm text-on-surface-variant space-y-1.5 mb-5">
+              <li>Ngày 1: Thành Cổ — Vịnh Mốc</li>
+              <li>Ngày 2: Hiền Lương — Cửa Tùng (Cồn Cỏ nếu đã có tàu)</li>
+            </ul>
+            <a class="mt-auto inline-flex items-center justify-center self-start bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container active:scale-[0.98] transition-transform" href="lich-trinh.html#nam">Chi tiết tuyến nam</a>
+          </div>
+        </article>
+        <article class="md:col-span-5 qt-card bg-surface-container-lowest border border-outline-variant/25 flex flex-col overflow-hidden">
+          <div class="qt-card-media overflow-hidden">
+            <img referrerpolicy="no-referrer" alt="Núi rừng Phong Nha" class="w-full h-44 object-cover" src="../assets/images/img-ccddc239e7.jpg"/>
+          </div>
+          <div class="qt-card-body flex flex-col flex-1">
+            <p class="font-label-caps text-label-caps text-secondary mb-2">2 ngày · phía bắc</p>
+            <h3 class="font-title-modern text-primary text-xl mb-3">Hang động – Nhật Lệ</h3>
+            <ul class="text-sm text-on-surface-variant space-y-1.5 mb-5">
+              <li>Ngày 1: thuyền động Phong Nha</li>
+              <li>Ngày 2: Đồng Hới — Nhật Lệ; tuỳ chọn nhà Đại tướng</li>
+            </ul>
+            <a class="mt-auto inline-flex items-center justify-center self-start bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container active:scale-[0.98] transition-transform" href="lich-trinh.html#bac">Chi tiết tuyến bắc</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../assets/js/site-map.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+(function () {
+  var kind = "all";
+  var huyen = "";
+  var buttons = document.querySelectorAll("#filter-kinds .filter-link");
+  var cards = document.querySelectorAll(".dest-card");
+  var empty = document.getElementById("filter-empty");
+  var select = document.getElementById("loc-huyen");
+
+  function apply() {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var okKind = kind === "all" || card.getAttribute("data-kind") === kind;
+      var okHuyen = !huyen || card.getAttribute("data-huyen") === huyen;
+      var on = okKind && okHuyen;
+      card.style.display = on ? "" : "none";
+      if (on) shown += 1;
+    });
+    if (empty) empty.classList.toggle("hidden", shown > 0);
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      kind = btn.getAttribute("data-filter");
+      buttons.forEach(function (b) {
+        b.classList.toggle("is-active", b === btn);
+        b.classList.toggle("text-primary", b === btn);
+        b.classList.toggle("border-secondary", b === btn);
+        b.classList.toggle("text-on-surface-variant", b !== btn);
+        b.classList.toggle("border-transparent", b !== btn);
+      });
+      apply();
+    });
+  });
+  if (select) {
+    select.addEventListener("change", function () {
+      huyen = select.value;
+      apply();
+    });
+  }
+})();
+</script>
+</body>
+</html>

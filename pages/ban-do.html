@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta name="referrer" content="no-referrer"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bản đồ số Quảng Trị</title>
+<link href="../assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,container-queries"></script>
+<script src="../assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,400;0,18..144,700;1,18..144,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<style>
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  body[data-page="map"] { height: 100dvh; overflow: hidden; }
+  body[data-page="map"] #site-footer { display: none !important; }
+  .map-shell { min-height: 0; }
+  .map-aside {
+    width: 100%;
+    background: #FFFCF7;
+    border-right: 1px solid rgba(212,196,176,.45);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .map-title {
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: #6B2218;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+  .map-search-wrap { padding: 0 20px 14px; }
+  .map-search-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 12px;
+    background: #F7F1E6;
+    border: 1px solid #D4C4B0;
+    border-radius: 10px;
+  }
+  .map-search-field:focus-within {
+    border-color: #6B2218;
+    box-shadow: 0 0 0 3px rgba(107, 34, 24, 0.12);
+  }
+  .map-search-icon {
+    flex-shrink: 0;
+    color: #5C4A3E;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .map-search-wrap input.map-search[type="search"] {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+    padding: 12px 0;
+    border: 0;
+    background: transparent;
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #2C221A;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .map-search-wrap input.map-search[type="search"]::placeholder {
+    color: #8B7464;
+  }
+  .map-search-wrap input.map-search[type="search"]:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .map-search-clear {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #5C4A3E;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-search-clear .material-symbols-outlined { font-size: 18px; }
+  .map-chips { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .map-chip {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    padding: 2px 0 4px; border: 0; border-bottom: 2px solid transparent;
+    background: none; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    font-weight: 600; color: #5C4A3E; cursor: pointer;
+  }
+  .map-chip.is-on { color: #6B2218; border-bottom-color: #9A7428; }
+  .map-chip [data-count] { font-variant-numeric: tabular-nums; font-size: 10px; color: #8B7464; }
+  .map-list { flex: 1; overflow: auto; padding: 8px 16px 16px; min-height: 0; }
+  .map-place {
+    width: 100%; display: flex; gap: 12px; text-align: left;
+    padding: 8px; border-radius: 4px 10px 10px 4px; border: 1px solid transparent;
+    background: transparent; cursor: pointer; margin-bottom: 6px;
+  }
+  .map-place img {
+    width: 112px; height: 76px; object-fit: cover; object-position: center;
+    border-radius: 4px; flex-shrink: 0;
+  }
+  .map-place-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .map-place strong {
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6B2218;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+  .map-place-meta { font-size: 12px; color: #5C4A3E; }
+  .map-place-tag {
+    font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    font-weight: 600; color: #9A7428;
+  }
+  .map-place:hover, .map-place.is-active { background: #F7F1E6; border-color: #D4C4B0; }
+  .map-place.is-active { box-shadow: inset 3px 0 0 #6B2218; }
+  .map-stage { position: relative; flex: 1; min-height: 280px; overflow: hidden; background: #E4D8C6; }
+  #map-canvas { position: absolute; inset: 0; z-index: 1; }
+  .leaflet-container {
+    width: 100%; height: 100%;
+    background: #E8E0D2;
+    font-family: "Be Vietnam Pro", sans-serif;
+  }
+  .leaflet-container img { max-width: none !important; }
+  .leaflet-control-zoom a {
+    background: #FFFCF7 !important; color: #2C221A !important;
+    border-color: #D4C4B0 !important;
+  }
+  .leaflet-control-attribution {
+    background: rgba(255,252,247,.88) !important;
+    color: #5C4A3E !important; font-size: 10px !important;
+  }
+  .map-pin-icon,
+  .leaflet-div-icon.map-pin-icon {
+    background: none !important;
+    border: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .map-pin-dot {
+    width: 36px; height: 36px; border-radius: 999px;
+    color: #FFF8F0; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(42,33,24,.28);
+    border: 2px solid #FFF8F0;
+  }
+  .map-pin-dot .material-symbols-outlined { font-size: 18px; }
+  .map-pin-name {
+    max-width: 148px; padding: 2px 8px; border-radius: 2px;
+    background: rgba(255,252,247,.94); color: #2C221A;
+    font-size: 11px; font-weight: 600; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+    box-shadow: 0 2px 8px rgba(42,33,24,.12);
+  }
+  .map-pin-icon.is-active .map-pin-dot { outline: 3px solid #D4A84B; }
+  .map-geo-label { background: none !important; border: none !important; }
+  .map-geo-label span {
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 13px; font-style: italic; color: #5C4A3E;
+    white-space: nowrap; pointer-events: none;
+    text-shadow: 0 1px 0 rgba(255,252,247,.9);
+  }
+  .map-context {
+    position: absolute; left: 16px; right: 72px; top: 16px; z-index: 820;
+    pointer-events: none;
+    background: rgba(255,252,247,.94);
+    border: 1px solid rgba(212,196,176,.45);
+    padding: 8px 12px; font-size: 12px; color: #5C4A3E; line-height: 1.4;
+    max-width: 420px;
+  }
+  .map-context strong { color: #6B2218; font-weight: 600; }
+  .map-popup {
+    position: absolute; left: 16px; right: 16px; bottom: 16px;
+    max-width: 380px; background: #FFFCF7; border-radius: 4px 12px 12px 12px;
+    overflow: hidden; z-index: 850;
+    box-shadow: 0 16px 40px rgba(42,33,24,.18);
+    border: 1px solid rgba(212,196,176,.45);
+  }
+  @media (min-width: 768px) {
+    .map-aside { width: 400px; }
+    .map-popup { left: auto; right: 20px; bottom: 20px; }
+  }
+  .map-popup[hidden] { display: none !important; }
+  .map-popup img { width: 100%; height: 176px; object-fit: cover; object-position: center; }
+  .map-popup-body { padding: 1.7rem 1.85rem 1.95rem; }
+  .map-popup h2 {
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #6B2218;
+    margin: 4px 0 6px;
+    line-height: 1.3;
+    word-break: keep-all;
+  }
+  .map-popup p { font-size: 14px; color: #5C4A3E; line-height: 1.5; margin: 0 0 8px; }
+  .map-popup-geo { font-style: italic; }
+  .map-popup-link { font-size: 13px !important; color: #2C221A !important; }
+  .map-popup-meta { display: flex; gap: 14px; font-size: 12px; color: #5C4A3E; margin-bottom: 12px; }
+  .map-popup-meta .material-symbols-outlined { font-size: 16px; vertical-align: middle; }
+  .map-popup-actions { display: flex; gap: 8px; }
+  .map-btn-primary, .map-btn-ghost {
+    flex: 1; text-align: center; padding: 10px 8px; border-radius: 2px;
+    font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+  }
+  .map-btn-primary { background: #6B2218; color: #FFF8F0; }
+  .map-btn-ghost { border: 1px solid #6B2218; color: #6B2218; }
+  .map-popup-close {
+    position: absolute; top: 8px; right: 8px; width: 32px; height: 32px;
+    border: 0; border-radius: 999px; background: rgba(255,252,247,.9);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+  }
+  .map-legend {
+    position: absolute; left: 16px; bottom: 16px; z-index: 820;
+    background: rgba(255,252,247,.94); border-radius: 4px; padding: 10px 12px;
+    border: 1px solid rgba(212,196,176,.45); font-size: 11px; color: #5C4A3E;
+    max-width: 240px;
+  }
+  .map-legend b { display: block; margin-bottom: 6px; letter-spacing: .08em; text-transform: uppercase; }
+  .map-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 99px; margin-right: 6px; }
+  .map-legend .map-legend-line {
+    display: inline-block; width: 16px; height: 0; border-top: 2px solid #6B2218;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .map-legend .map-legend-line.is-dash { border-top-style: dashed; border-color: #2A4560; }
+  .map-legend .map-legend-line.is-lat { border-top-style: dashed; border-color: #9A7428; }
+  .map-legend .map-legend-note {
+    display: block; margin-top: 8px; font-size: 10px; line-height: 1.4; color: #8B7464;
+    text-transform: none; letter-spacing: 0; font-weight: 400;
+  }
+  .map-fallback {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; text-align: center; color: #5C4A3E; background: #E8E0D2;
+  }
+  @media (max-width: 767px) {
+    .map-shell { flex-direction: column; }
+    .map-stage { order: 1; height: 48vh; flex: none; }
+    .map-aside { order: 2; max-height: 46vh; border-right: 0; border-top: 1px solid rgba(212,196,176,.45); }
+    .map-popup {
+      max-width: none;
+      left: max(12px, env(safe-area-inset-left, 0px));
+      right: max(12px, env(safe-area-inset-right, 0px));
+      bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    }
+    .map-popup-body { padding: 1.25rem 1.35rem 1.4rem; }
+    .map-legend { display: none; }
+    .map-context {
+      left: max(12px, env(safe-area-inset-left, 0px));
+      right: 56px;
+      max-width: none;
+    }
+  }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col overflow-hidden" data-page="map">
+<div id="site-header"></div>
+<main class="map-shell flex-1 flex min-h-0 relative">
+<aside class="map-aside" id="map-aside">
+  <div class="px-5 pt-5 pb-3 border-b border-outline-variant/30">
+    <p class="text-label-caps font-label-caps text-secondary mb-1">Bản đồ số</p>
+    <h1 class="map-title" id="map-heading">Khám phá điểm đến</h1>
+    <p class="text-sm text-on-surface-variant mt-1"><span id="map-count">8</span><span id="map-sub-rest"> địa danh · lịch sử, biển, bản làng</span></p>
+  </div>
+  <nav class="px-5 pb-2 map-chips" role="tablist" aria-label="Lớp bản đồ">
+    <button type="button" class="map-chip is-on" data-panel="places" role="tab" aria-selected="true">Điểm đến</button>
+    <button type="button" class="map-chip" data-panel="admin" role="tab" aria-selected="false">78 xã phường</button>
+  </nav>
+  <form class="map-search-wrap" id="map-search-form" role="search">
+    <label class="sr-only" for="map-search">Tìm địa danh hoặc xã, phường</label>
+    <div class="map-search-field">
+      <span class="map-search-icon material-symbols-outlined" aria-hidden="true">search</span>
+      <input id="map-search" class="map-search" placeholder="Thành Cổ, Cửa Tùng, Phong Nha…" type="search" autocomplete="off" enterkeyhint="search"/>
+      <button type="button" class="map-search-clear" id="map-search-clear" hidden aria-label="Xóa từ khóa">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+  </form>
+  <div class="px-5 pb-3 map-chips" id="map-place-chips" role="group" aria-label="Lọc theo trụ cột">
+    <button type="button" class="map-chip is-on" data-cat="heritage" aria-pressed="true">Lịch sử <span data-count>3</span></button>
+    <button type="button" class="map-chip is-on" data-cat="nature" aria-pressed="true">Thiên nhiên <span data-count>3</span></button>
+    <button type="button" class="map-chip is-on" data-cat="culture" aria-pressed="true">Văn hóa <span data-count>1</span></button>
+    <button type="button" class="map-chip is-on" data-cat="growth" aria-pressed="true">Phát triển <span data-count>1</span></button>
+  </div>
+  <div class="px-5 pb-3 map-chips" id="map-admin-chips" hidden role="group" aria-label="Lọc loại đơn vị">
+    <button type="button" class="map-chip is-on" data-adm-type="all" aria-pressed="true">Tất cả</button>
+    <button type="button" class="map-chip" data-adm-type="xã" aria-pressed="false">Xã</button>
+    <button type="button" class="map-chip" data-adm-type="phường" aria-pressed="false">Phường</button>
+    <button type="button" class="map-chip" data-adm-type="đặc khu" aria-pressed="false">Đặc khu</button>
+  </div>
+  <div class="px-5 pb-2" id="map-itin-link">
+    <a class="inline-flex items-center gap-2 text-xs font-label-caps text-primary border border-primary rounded-full px-3 py-2 hover:bg-primary hover:text-on-primary" href="lich-trinh.html"><span class="material-symbols-outlined text-[16px]">route</span> Lịch 2 ngày · chọn tuyến</a>
+  </div>
+  <div class="px-5 pb-2" id="map-catalog-link" hidden>
+    <a class="inline-flex items-center gap-2 text-xs font-label-caps text-primary border border-primary rounded-full px-3 py-2 hover:bg-primary hover:text-on-primary" href="hanh-chinh.html">Danh mục đầy đủ · NQ 1680</a>
+  </div>
+  <div class="map-list" id="map-list"></div>
+  <p id="map-empty" hidden class="px-5 pb-4 text-sm text-on-surface-variant">Không có điểm nào khớp bộ lọc. Bật lại trụ cột hoặc xóa từ khóa.</p>
+</aside>
+
+<section class="map-stage" aria-label="Bản đồ Quảng Trị">
+  <div id="map-canvas" role="application" aria-label="Bản đồ tương tác Quảng Trị"></div>
+  <p id="map-fallback" class="map-fallback" hidden>Không tải được bản đồ. Dùng danh sách bên trái để chọn điểm đến.</p>
+  <div class="map-context" id="map-context">Ghim tham khảo (Wikipedia / OSM, làm tròn). Tuyến màu là gợi ý đi — không phải ranh giới hành chính hay vĩ tuyến 17.</div>
+  <div class="map-legend">
+    <b>Chú giải</b>
+    <div><i style="background:#9A7428"></i>Lịch sử</div>
+    <div><i style="background:#2A4560"></i>Thiên nhiên</div>
+    <div><i style="background:#6B2218"></i>Văn hóa</div>
+    <div><i style="background:#355A78"></i>Phát triển</div>
+    <div class="mt-2"><span class="map-legend-line is-lat"></span>Vĩ tuyến 17 (~17°B)</div>
+    <div><span class="map-legend-line"></span>Gợi ý Trường Sơn–biển</div>
+    <div><span class="map-legend-line" style="border-color:#9A7428"></span>Gợi ý lịch nam</div>
+    <div><span class="map-legend-line" style="border-color:#2A4560"></span>Gợi ý lịch bắc</div>
+    <div><span class="map-legend-line is-dash"></span>Gợi ý ra đảo</div>
+    <span class="map-legend-note">Đường đứt vàng là vĩ tuyến địa lý, không nối Phong Nha hay Đồng Hới. 78 xã/phường là danh mục tên — không vẽ ranh giới (Điều 3 NQ 1680).</span>
+  </div>
+  <div class="map-popup" id="map-popup"></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/site-map.js"></script>
+<script src="../assets/js/admin-units.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../assets/js/map-explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.idea/
+.vscode/
+stitch_qu_ng_tr_k_c_kh_t_v_ng/

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta name="referrer" content="no-referrer"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sự kiện & lễ hội Quảng Trị</title>
+<link href="../assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com/3.4.16?plugins=forms,container-queries"></script>
+<script src="../assets/js/theme.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Merriweather:ital,opsz,wght@0,18..144,400;0,18..144,700;1,18..144,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  .evt-tab {
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase; color: #5C4A3E; background: none; border: 0;
+    border-bottom: 2px solid transparent; padding: 2px 0 6px; cursor: pointer;
+    word-break: keep-all;
+  }
+  .evt-tab:hover { color: #6B2218; }
+  .evt-tab.is-active { color: #6B2218; border-bottom-color: #9A7428; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col" data-page="events">
+<div id="site-header"></div>
+
+<main class="flex-1">
+<section class="relative min-h-[420px] md:min-h-[500px] flex items-end overflow-hidden">
+  <img referrerpolicy="no-referrer" alt="Cầu Hiền Lương và sông Bến Hải" class="absolute inset-0 w-full h-full object-cover" src="../assets/images/img-9f0a2b3bfa.jpg"/>
+  <div class="absolute inset-0 bg-gradient-to-t from-[#2A2118] via-[#2A2118]/55 to-black/20"></div>
+  <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-12 pt-28">
+    <p class="font-label-caps text-label-caps text-secondary-container mb-3">Hai địa bàn · một lịch</p>
+    <h1 class="font-display-heritage text-display-heritage text-on-primary max-w-3xl">Sự kiện và lễ hội</h1>
+    <p class="font-body-lg text-on-primary/90 max-w-2xl mt-4">Phía nam: Thống nhất Hiền Lương, tri ân tháng 7. Phía bắc: lễ hội hang động Phong Nha. Ngày cụ thể hỏi Sở VHTTDL — không có lịch cố định cho mọi lễ.</p>
+  </div>
+</section>
+
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10">
+  <nav class="flex flex-wrap gap-x-5 gap-y-2 pb-4 border-b border-outline-variant/40" aria-label="Lọc theo địa bàn">
+    <button type="button" class="evt-tab is-active" data-region="all" aria-pressed="true">Tất cả</button>
+    <button type="button" class="evt-tab" data-region="nam" aria-pressed="false">Phía nam · Quảng Trị cũ</button>
+    <button type="button" class="evt-tab" data-region="bac" aria-pressed="false">Phía bắc · Quảng Bình cũ</button>
+  </nav>
+
+  <div class="divide-y divide-outline-variant/40 border-b border-outline-variant/40 mt-2">
+    <article class="evt-item py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center" data-region="nam">
+      <img referrerpolicy="no-referrer" alt="Đua thuyền sông Bến Hải" class="md:col-span-5 w-full h-48 object-cover" src="../assets/images/img-6f3098b8b4.jpg"/>
+      <div class="md:col-span-7">
+        <p class="font-label-caps text-label-caps text-secondary mb-1">Khoảng 30/4 · Hiền Lương</p>
+        <h2 class="font-headline-lg text-2xl text-primary mb-2">Lễ hội Thống nhất non sông</h2>
+        <p class="text-on-surface-variant mb-4 max-w-xl">Kỷ niệm giải phóng miền Nam tại đôi bờ Bến Hải. Thường có thượng cờ và đua thuyền — lịch từng năm do Sở công bố.</p>
+        <a class="inline-flex items-center gap-1 bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container" href="le-hoi-thong-nhat.html">Xem chi tiết <span class="material-symbols-outlined text-[18px]">east</span></a>
+      </div>
+    </article>
+
+    <article class="evt-item py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center" data-region="nam">
+      <img referrerpolicy="no-referrer" alt="Thành Cổ Quảng Trị" class="md:col-span-5 w-full h-48 object-cover md:order-2" src="../assets/images/img-e9e27cc4d7.jpg"/>
+      <div class="md:col-span-7 md:order-1">
+        <p class="font-label-caps text-label-caps text-secondary mb-1">Tháng 7 · Thành Cổ · nghĩa trang</p>
+        <h2 class="font-headline-lg text-2xl text-primary mb-2">Tri ân liệt sĩ</h2>
+        <p class="text-on-surface-variant mb-4 max-w-xl">Thành Cổ, Nghĩa trang Trường Sơn, Nghĩa trang Đường 9. Ăn mặc nghiêm, không tạo dáng trên phần mộ. Hoa đăng sông Thạch Hãn nếu địa phương tổ chức.</p>
+        <a class="inline-flex items-center gap-1 bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container" href="cong-dong.html#tri-an">Cách đi cho đúng <span class="material-symbols-outlined text-[18px]">east</span></a>
+      </div>
+    </article>
+
+    <article class="evt-item py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center" data-region="bac">
+      <img referrerpolicy="no-referrer" alt="Núi rừng Phong Nha – Kẻ Bàng" class="md:col-span-5 w-full h-48 object-cover" src="../assets/images/img-ccddc239e7.jpg"/>
+      <div class="md:col-span-7">
+        <p class="font-label-caps text-label-caps text-secondary mb-1">Khoảng 2 năm/lần · Phong Nha</p>
+        <h2 class="font-headline-lg text-2xl text-primary mb-2">Lễ hội hang động</h2>
+        <p class="text-on-surface-variant mb-4 max-w-xl">Quảng bá Di sản UNESCO. Kỳ 2027 nằm trong Năm Du lịch quốc gia – Quảng Trị (dự kiến tháng 3). Hỏi Sở trước khi đặt phòng.</p>
+        <a class="inline-flex items-center gap-1 bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container" href="diem-den/phong-nha.html">Trang Phong Nha <span class="material-symbols-outlined text-[18px]">east</span></a>
+      </div>
+    </article>
+
+    <article class="evt-item py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center" data-region="nam">
+      <img referrerpolicy="no-referrer" alt="Bản làng miền Tây" class="md:col-span-5 w-full h-48 object-cover md:order-2" src="../assets/images/img-35abd19929.jpg"/>
+      <div class="md:col-span-7 md:order-1">
+        <p class="font-label-caps text-label-caps text-secondary mb-1">Theo mùa lúa · Đakrông</p>
+        <h2 class="font-headline-lg text-2xl text-primary mb-2">Lễ A Riêu Ping</h2>
+        <p class="text-on-surface-variant mb-4 max-w-xl">Lễ đồng bào Pa Cô. Ngày đổi từng năm — gọi tổ cộng đồng trước. Không phải show bán vé.</p>
+        <a class="inline-flex items-center gap-1 bg-primary text-on-primary px-4 py-2 text-sm font-medium hover:bg-primary-container" href="cong-dong.html">Trang cộng đồng <span class="material-symbols-outlined text-[18px]">east</span></a>
+      </div>
+    </article>
+  </div>
+  <p id="evt-empty" class="hidden text-sm text-on-surface-variant mt-6">Không có sự kiện khớp địa bàn. Chọn “Tất cả”.</p>
+</div>
+</main>
+
+<div id="site-footer"></div>
+<script src="../assets/js/site-map.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+(function () {
+  var tabs = document.querySelectorAll(".evt-tab");
+  var items = document.querySelectorAll(".evt-item");
+  var empty = document.getElementById("evt-empty");
+  tabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var region = btn.getAttribute("data-region");
+      tabs.forEach(function (t) {
+        var on = t === btn;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      var shown = 0;
+      items.forEach(function (el) {
+        var on = region === "all" || el.getAttribute("data-region") === region;
+        el.classList.toggle("hidden", !on);
+        if (on) shown += 1;
+      });
+      if (empty) empty.classList.toggle("hidden", shown > 0);
+    });
+  });
+})();
+</script>
+</body>
+</html>
